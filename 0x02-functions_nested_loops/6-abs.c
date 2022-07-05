@@ -4,8 +4,7 @@
  *
  * @n: the int to check
  *
- * Return: the absolute value of int
- *        
+ * Return: the absolute value of int      
  */
 int _abs(int n)
 {
