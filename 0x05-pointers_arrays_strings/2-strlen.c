@@ -1,15 +1,17 @@
-nclude "main.h"
 /**
- * _strlen - give the length of a string
- *
- * @s: the string
- *
- * Return: the length of a string
- *
-*/
+ * _strlen - calculates the length of a string.
+ * @s: pointer to the character array.
+ * Return: length of the string
+ */
 int _strlen(char *s)
 {
-int i;
-for (i = 0 ; s[i] != '\0' ; i++)
-return (i);
+	int i;
+
+	i = 0;
+	while (*s != '\0')
+	{
+		i++;
+		s++;
+	}
+	return (i);
 }
