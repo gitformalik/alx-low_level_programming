@@ -1,17 +1,11 @@
 #import "main.h"
-
 /**
+ * main -
  *
- *  * main -
+ * Return:
  *
- *   * Return:
- *
- *    */
-
+*/
 int main(void)
-
 {
-
-		return (0);
-
+return (0);
 } 
