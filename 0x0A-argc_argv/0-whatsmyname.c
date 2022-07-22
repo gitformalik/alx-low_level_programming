@@ -1,29 +1,17 @@
 #include <stdio.h>
-
-
-
 /**
+ * main - prints its name
  *
- *  * main - prints its name
+ * @argc: the number of arguments passed.
  *
- *   * @argc: the number of arguments passed.
+ * @argv: the pointer to an array of pointers.
  *
- *    * @argv: the pointer to an array of pointers.
+ * Return: Always 0
  *
- *     *
- *
- *      * Return: Always 0
- *
- *       */
-
+*/
 int main(int argc, char *argv[])
-
 {
-
-		while (argc--)
-
-					puts(*argv++);
-
-			return (0);
-
+while (argc--)
+puts(*argv++);
+return (0);
 }
