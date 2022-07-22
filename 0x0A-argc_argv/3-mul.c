@@ -2,13 +2,10 @@
 #include <stdio.h>
 /**
  * main - prints the product of two integers to the stdout
- *
  * @argc: the number of passed arguments
- *
  * @argv: the array of passed arguments
  *
  * Return: the product if argc == 2, else 1
- *
 */
 int main(int argc, char *argv[])
 {
@@ -26,16 +23,15 @@ return (1);
 }
 /**
  * _atoi - extracts integer from string
- *
  * @s: the string to be parsed
  *
  * Return: integer if integer is present in s, else 0
- *
-*/
+ */
 int _atoi(char *s)
 {
 int FLAG = 0, len, n = 0, d = 0, digit, i;
-for (len = 0; s[len] != '\0'; len++);
+for (len = 0; s[len] != '\0'; len++)
+;
 for (i = 0; i < len && !FLAG; i++)
 {
 if (s[i] == '-')
