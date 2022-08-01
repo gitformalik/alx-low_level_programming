@@ -1,78 +1,91 @@
 #include <stdlib.h>
 #include "dog.h"
-int _strLen(char *str);
-void fillMem(char *str, int strLen, char *dest);
+
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+
 /**
- * new_dog - Creates a new dog
+ * new_dog - ...
+ * @name: ...
+ * @age: ...
+ * @owner: ...
  *
- * @name: Name of dog
- *
- * @age: Age of dog
- *
- * @owner: Owner of dog
- *
- * Return: Pointer to the newly created dog (SUCCESS) or
- *
- * NULL if insufficient memory was available (FAILURE)
- *
-*/
+ * Return: ...
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *n_dog;
-int nameLen, ownerLen;
-n_dog = malloc(sizeof(dog_t));
-if (n_dog == NULL)
-return (NULL);
-nameLen = _strLen(name);
-n_dog->name = malloc(sizeof(char) * nameLen + 1);
-if (n_dog->name == NULL)
-{
-free(n_dog);
-return (NULL);
+	dog_t *cutie_dog;
+	int name_l = 0, own_l = 0;
+
+	if (name != NULL && owner != NULL)
+	{
+		name_l = _strlen(name) + 1;
+		own_l = _strlen(owner) + 1;
+		cutie_dog = malloc(sizeof(dog_t));
+
+		if (cutie_dog == NULL)
+			return (NULL);
+
+		cutie_dog->name = malloc(sizeof(char) * name_l);
+
+		if (cutie_dog->name == NULL)
+		{
+			free(cutie_dog);
+			return (NULL);
+		}
+
+		cutie_dog->owner = malloc(sizeof(char) * own_l);
+
+		if (cutie_dog->owner == NULL)
+		{
+			free(cutie_dog->name);
+			free(cutie_dog);
+			return (NULL);
+		}
+
+		cutie_dog->name = _strcpy(cutie_dog->name, name);
+		cutie_dog->owner = _strcpy(cutie_dog->owner, owner);
+		cutie_dog->age = age;
+	}
+
+	return (cutie_dog);
 }
-fillMem(name, nameLen, n_dog->name);
-ownerLen = _strLen(owner);
-n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
-if (n_dog->owner == NULL)
-{
-free(n_dog);
-free(n_dog->name);
-return (NULL);
-}
-fillMem(owner, ownerLen, n_dog->owner);
-n_dog->age = age;
-return (n_dog);
-}
+
 /**
- * _strLen - Get length of a string
+ * _strlen - Returns the length of a string
+ * @s: String to count
  *
- * @str: A string
- *
- * Return: Length of string
- *
-*/
-int _strLen(char *str)
+ * Return: String length
+ */
+int _strlen(char *s)
 {
-int i = 0;
-while (str[i])
-i++;
-return (i);
+	int c = 0;
+
+	for (; *s != '\0'; s++)
+	{
+		c++;
+	}
+
+	return (c);
 }
+
 /**
+ * _strcpy - Copy a string
+ * @dest: Destination value
+ * @src: Source value
  *
- * fillMem - Copy string literal to allocated memory
- *
- * @str: String literal
- *
- * @strLen: @str length
- *
- * @dest: The allocated memory
- *
-*/
-void fillMem(char *str, int strLen, char *dest)
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
 {
-int i;
-for (i = 0; i < strLen; i++)
-dest[i] = str[i];
-dest[i] = '\0';
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i++] = '\0';
+
+	return (dest);
 }
