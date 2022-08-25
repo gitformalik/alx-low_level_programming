@@ -1,6 +1,6 @@
-#include "holberton.h"
+#include "main.h"
 /**
-* read_textfile - check the code for Holberton School students.
+* read_textfile - check the code for alx School students.
 * @filename: file to read and write
 * @letters: number of letters to read and write.
 * Return: letters printed
