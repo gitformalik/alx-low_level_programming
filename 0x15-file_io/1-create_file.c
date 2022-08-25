@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
   * _strlen - length of a string
   * @s: input char
@@ -15,7 +15,7 @@ int _strlen(char *s)
 	return (i);
 }
 /**
-* create_file - check the code for Holberton School students.
+* create_file - check the code for alx students.
 * @filename: file to create.
 * @text_content: info to write into the file.
 * Return: 1 on success, -1 on failure
