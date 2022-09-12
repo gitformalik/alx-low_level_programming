@@ -7,24 +7,18 @@
  * Return: pointer to the newly created array (SUCCESS) or
  * NULL if @min > @max (FAILURE) or
  * NULL if insufficient memory was available (FAILURE)
- */
-
+*/
 int *array_range(int min, int max)
 {
-	int i, n;
-	int *ptr;
-
-	if (min > max)
-		return ('\0');
-
-	n = (max - min) + 1;
-	ptr = malloc(sizeof(int) * n);
-
-	if (ptr == NULL)
-		return ('\0');
-
-	for (i = 0; i < n; i++)
-		ptr[i] = min + i;
-
-	return (ptr);
+int i, n;
+int *ptr;
+if (min > max)
+return ('\0');
+n = (max - min) + 1;
+ptr = malloc(sizeof(int) * n);
+if (ptr == NULL)
+return ('\0');
+for (i = 0; i < n; i++)
+ptr[i] = min + i;
+return (ptr);
 }
